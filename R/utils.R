@@ -82,7 +82,6 @@ aggregate_results <- function(improvements, contributions, importances) {
 #'     target-specific p-values.
 #'
 #' @seealso \code{\link{aggregate_results}()} for aggregating processed results.
-#'
 process_importances <- function(raw.importances, contributions, model_by_target = FALSE, target_predictor_df = NULL) {
 
   samples <- raw.importances %>%
@@ -180,6 +179,7 @@ process_importances <- function(raw.importances, contributions, model_by_target 
 #' }
 #'
 #' @seealso \code{\link{collect_results}()} for collecting and aggregating results.
+#' @export 
 collect_raw_results <- function(db.file, sample.pattern = ".", ...){
 
   sqm <- DBI::dbConnect(RSQLite::SQLite(), db.file)
